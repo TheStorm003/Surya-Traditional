@@ -1,0 +1,51 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Josefin Sans', sans-serif; }
+body {
+  background-image: linear-gradient(rgba(255,136,0,0.6), rgba(255,136,0,0.6)), url(images/lord-ram.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+h2 { margin-bottom: 20px; font-size: 28px; }
+.order-box {
+  background: rgba(255,255,255,0.3);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  backdrop-filter: blur(5px);
+  max-width: 400px;
+  width: 90%;
+}
+.order-box p {
+  color: white;
+  font-size: 18px;
+  margin: 10px 0;
+}
+input[type="checkbox"] {
+  transform: scale(1.2);
+  margin-right: 10px;
+}
+button {
+  margin-top: 20px;
+  background: orangered;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+button:hover { transform: scale(1.1); }
+.amount-box {
+  margin-top: 15px;
+  background: rgba(0,0,0,0.2);
+  padding: 15px;
+  border-radius: 10px;
+}

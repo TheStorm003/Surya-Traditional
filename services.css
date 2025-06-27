@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background: linear-gradient(rgba(255, 136, 0, 0.6), rgba(255, 136, 0, 0.6)),
+    url('images/lord-ram.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    min-height: 100vh;
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  .logo {
+    font-size: 28px;
+    font-weight: bold;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  nav ul li {
+    margin-left: 20px;
+  }
+  nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  nav ul li a:hover {
+    color: orangered;
+  }
+
+  .services-container {
+    max-width: 1000px;
+    margin: 80px auto;
+    background: rgba(255,255,255,0.1);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    text-align: center;
+  }
+  h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+    color: gold;
+    text-shadow: 2px 2px 4px black;
+  }
+  p.subheading {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  .service-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .service-item {
+background: rgba(255, 255, 255, 0.2);
+border: 2px solid orangered;
+border-radius: 10px;
+padding: 20px;
+width: 220px;
+transition: transform 0.3s, background-color 0.3s;
+cursor: pointer;
+color: white;
+}
+
+.service-item:hover {
+transform: scale(1.05);
+background: rgba(0, 0, 0, 0.7);
+box-shadow: 0 0 15px rgba(0,0,0,0.8);
+}
+
+.service-item:hover h3,
+.service-item:hover p {
+color: white;
+}
+  footer {
+    margin-top: 50px;
+    text-align: center;
+    padding: 15px;
+    background: rgba(0,0,0,0.7);
+  }
+  .to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    background: white;
+    color: black;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 22px;
+    box-shadow: 0 0 10px black;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s;
+  }
+  .to-top.active {
+    opacity: 1;
+    pointer-events: auto;
+  }

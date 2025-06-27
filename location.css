@@ -1,0 +1,158 @@
+html {
+    scroll-behavior: smooth;
+  }
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+  .navbar {
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(255, 136, 0, 0.6), rgba(255, 136, 0, 0.6)), url(images/pexels-navneet-shanu-672630.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 40px;
+    padding-left: 10%;
+    padding-right: 10%;
+    flex-wrap: wrap;
+  }
+  .logo {
+    color: white;
+    font-size: 28px;
+  }
+  nav ul li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 10px 20px;
+  }
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  nav ul li a:hover {
+    color: orangered;
+    transition: .3s;
+  }
+  .nav-right-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  button {
+    border: none;
+    background: orangered;
+    padding: 10px 20px;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    transition: .4s;
+  }
+  button:hover {
+    transform: scale(1.3);
+    cursor: pointer;
+  }
+  #logo-quote {
+    margin-left: 15%;
+    width: 40%;
+    margin-top: 5%;
+    font-size: 60px;
+    color: white;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    min-width: 250px;
+    height: 50px;
+    margin-top: -250px;
+    margin-left: 900px;
+  }
+  .city {
+    border: none;
+    appearance: none;
+    padding: 0 30px 0 15px;
+    width: 70%;
+    color: white;
+    background-color: orangered;
+    font-size: 20px;
+  }
+  #terms {
+    font-size: 18px;
+    background-color: orangered;
+    color: whitesmoke;
+    height: 400px;
+  }
+  .Contact {
+    font-size: large;
+    margin-left: 150px;
+  }
+  #contact {
+    font-size: xx-large;
+  }
+  #num, #email {
+    font-size: medium;
+  }
+  #term {
+    text-align: center;
+    margin-top: 100px;
+  }
+  .social-icons {
+    padding: 30px;
+    background-color: orangered;
+    text-align: right;
+    margin-top: -100px;
+    margin-right: 50px;
+  }
+  .social-icons a {
+    color: #fff;
+    font-size: 30px;
+    margin: 0 5px;
+    text-decoration: none;
+    padding: 5px;
+  }
+  .social-icons a i {
+    transition: all 200ms ease-in;
+  }
+  .social-icons a:hover i {
+    box-shadow: 0 0 150px #000;
+    transform: scale(1.5);
+  }
+  .to-top {
+    position: fixed;
+    background: #fff;
+    bottom: 16px;
+    right: 32px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: black;
+    text-decoration: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .4s;
+  }
+  .to-top.active {
+    bottom: 32px;
+    pointer-events: auto;
+    opacity: 1;
+  }
+  #welcome {
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    white-space: nowrap;
+  }
