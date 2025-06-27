@@ -5,7 +5,7 @@
     font-family: 'Josefin Sans', sans-serif;
   }
   body {
-    background-image: linear-gradient(rgba(255, 136, 0, 0.6), rgba(255, 136, 0, 0.6)), url(images/pexels-navneet-shanu-672630.jpg);
+    background-image: linear-gradient(rgba(255, 136, 0, 0.6), rgba(255, 136, 0, 0.6)), url(pexels-navneet-shanu-672630.jpg);
     background-size: cover;
     background-position: center;
     height: 100vh;
