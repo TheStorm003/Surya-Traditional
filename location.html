@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surya Traditional</title>
+  <link rel="stylesheet" href="css/location.css">
+</head>
+
+<body>
+  <div class="navbar">
+    <nav>
+      <h2 class="logo">Surya Traditional</h2>
+      <ul>
+        <li><a href="location.html">Home</a></li>
+        <li><a href="about2.html">About</a></li>
+        <li><a href="services2.html">Service</a></li>
+        <li><a href="#terms">Contact Us</a></li>
+      </ul>
+
+      <div class="nav-right-group">
+        <button onclick="redirectToLink()">Search</button>
+        <span id="welcome"></span>
+      </div>
+      <button onclick="logout()" style="margin-left: 15px; background-color: darkorange; color: white; padding: 8px 15px; border-radius: 20px; border: none; cursor: pointer;">Logout</button>
+    </nav>
+
+    <div id="logo-quote">Embracing Tradition: Radiating Through Generations, Just Like the Eternal Sun.</div>
+
+    <div class="container">
+      <select class="city" id="city" name="city">
+        <option value="">--Select your city--</option>
+        <option value="Visakhapatnam">Visakhapatnam</option>
+        <option value="Vijayawada">Vijayawada</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="New Delhi">New Delhi</option>
+        <option value="Kolkota">Kolkota</option>
+        <option value="Chennai">Chennai</option>
+        <option value="Bengaluru">Bengaluru</option>
+        <option value="Jaipur">Jaipur</option>
+      </select>
+    </div>
+  </div>
+
+  <div id="terms">
+    <div class="Contact">
+      <br><br><br><br>
+      <span id="contact">Contact Us</span><br><br>
+      <span id="num">+91 7337407456</span><br><br>
+      <span id="email">suryatraditional@gmail.com</span>
+    </div>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <div class="social-icons">
+      <a href="#" title="facebook"><i class="fa fa-facebook-square"></i></a>
+      <a href="#" title="twitter"><i class="fa fa-twitter-square"></i></a>
+      <a href="#" title="instagram"><i class="fa fa-instagram"></i></a>
+      <a href="#" title="youtube"><i class="fa fa-youtube-square"></i></a>
+      <a href="#" title="linkedin"><i class="fa fa-linkedin-square"></i></a>
+    </div>
+
+    <p id="term">Copyright ©2023 All rights reserved | This page is made by Gudivada Surya Dhanush</p>
+  </div>
+
+  <a href="#" class="to-top">
+    <i class="fa fa-chevron-up"></i>
+  </a>
+  <script>
+    function redirectToLink() {
+    const city = document.getElementById("city").value;
+    if (city) {
+      location.replace("vizagpage.html"); // Replace based on city logic
+    }
+  }
+
+  // Show Welcome Message from localStorage
+  const firstname = localStorage.getItem('firstname');
+  if (firstname) {
+    document.getElementById('welcome').textContent = `Welcome, ${firstname}`;
+  }
+  function logout() {
+    localStorage.clear();
+    window.location.href = 'index.html'; // Redirect to home page or login page
+}
+  </script>
+</body>
+</html>

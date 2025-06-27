@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OTP Login - Surya Traditional</title>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/otplogin.css">
+</head>
+<body>
+
+<nav>
+  <h2 class="logo">Surya Traditional</h2>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="login-container">
+  <h2>OTP Login</h2>
+  <div class="toggle-buttons">
+    <button id="emailBtn" class="active">Email</button>
+    <button id="mobileBtn">Mobile</button>
+  </div>
+
+  <div id="emailForm" class="form-content active">
+    <input type="email" id="emailInput" placeholder="Enter Registered Email" required><br>
+    <button class="submit-btn" id="emailOtpBtn">Send OTP</button><br>
+    <div id="emailOtpSection" style="display:none;">
+      <input type="text" id="emailOtpInput" placeholder="Enter OTP" maxlength="6">
+      <button class="submit-btn" id="verifyEmailOtpBtn">Verify OTP</button>
+    </div>
+  </div>
+
+  <div id="mobileForm" class="form-content">
+    <input type="text" id="mobileInput" placeholder="Enter Registered Mobile Number" maxlength="10" required><br>
+    <button class="submit-btn" id="mobileOtpBtn">Send OTP</button><br>
+    <div id="mobileOtpSection" style="display:none;">
+      <input type="text" id="mobileOtpInput" placeholder="Enter OTP" maxlength="6">
+      <button class="submit-btn" id="verifyMobileOtpBtn">Verify OTP</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Copyright ©2024 All rights reserved | Made by Gudivada Surya Dhanush
+</footer>
+
+<script type="module">
+import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+
+const supabaseUrl = 'https://ajrvjnrrfecjhdclhkcx.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFqcnZqbnJyZmVjamhkY2xoa2N4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTA5NjE4MDYsImV4cCI6MjA2NjUzNzgwNn0.lMxG0-ely6IzaDNBF4uCiuviJ81KzdG092wJuHdaRg4';
+const supabase = createClient(supabaseUrl, supabaseKey);
+
+let generatedOtp = '';
+
+const emailBtn = document.getElementById('emailBtn');
+const mobileBtn = document.getElementById('mobileBtn');
+const emailForm = document.getElementById('emailForm');
+const mobileForm = document.getElementById('mobileForm');
+
+emailBtn.addEventListener('click', () => {
+  emailBtn.classList.add('active');
+  mobileBtn.classList.remove('active');
+  emailForm.classList.add('active');
+  mobileForm.classList.remove('active');
+});
+
+mobileBtn.addEventListener('click', () => {
+  mobileBtn.classList.add('active');
+  emailBtn.classList.remove('active');
+  mobileForm.classList.add('active');
+  emailForm.classList.remove('active');
+});
+
+// Email OTP Logic
+document.getElementById('emailOtpBtn').addEventListener('click', async () => {
+  const email = document.getElementById('emailInput').value.trim();
+  if (!email) {
+    alert('Enter your registered email');
+    return;
+  }
+
+  const { data } = await supabase.from('newtable').select('*').eq('email', email).single();
+  if (data) {
+    generatedOtp = Math.floor(100000 + Math.random() * 900000).toString();
+    alert(`OTP sent to your email: ${generatedOtp}`);  // Replace with actual email service later
+    document.getElementById('emailOtpSection').style.display = 'block';
+  } else {
+    alert('Email not registered');
+  }
+});
+
+document.getElementById('verifyEmailOtpBtn').addEventListener('click', () => {
+  const enteredOtp = document.getElementById('emailOtpInput').value.trim();
+  if (enteredOtp === generatedOtp) {
+    localStorage.setItem('firstname', data.firstname);
+    alert('OTP Verified Successfully');
+    window.location.href = 'location.html';
+  } else {
+    alert('Invalid OTP');
+  }
+});
+
+// Mobile OTP Logic
+document.getElementById('mobileOtpBtn').addEventListener('click', async () => {
+  const mobile = document.getElementById('mobileInput').value.trim();
+  if (mobile.length !== 10 || isNaN(mobile)) {
+    alert('Enter a valid 10-digit mobile number');
+    return;
+  }
+
+  const { data } = await supabase.from('newtable').select('*').eq('mobilenumber', mobile).single();
+  if (data) {
+    generatedOtp = Math.floor(100000 + Math.random() * 900000).toString();
+    alert(`OTP sent to your mobile: ${generatedOtp}`);  // Replace with actual SMS service later
+    document.getElementById('mobileOtpSection').style.display = 'block';
+  } else {
+    alert('Mobile number not registered');
+  }
+});
+
+document.getElementById('verifyMobileOtpBtn').addEventListener('click', () => {
+  const enteredOtp = document.getElementById('mobileOtpInput').value.trim();
+  if (enteredOtp === generatedOtp) {
+    localStorage.setItem('firstname', data.firstname);
+    alert('OTP Verified Successfully');
+    window.location.href = 'location.html';
+  } else {
+    alert('Invalid OTP');
+  }
+});
+</script>
+
+</body>
+</html>

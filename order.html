@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Place Order - Surya Traditional</title>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/order.css">
+<script src="js/order.js"></script>
+</head>
+<body>
+
+<h2>Confirm Your Order</h2>
+<div class="order-box">
+  <p><strong>Selected Person:</strong> <span id="personName"></span></p>
+  <p><strong>Base Price:</strong> ₹<span id="basePrice"></span></p>
+
+  <label>
+    <input type="checkbox" id="itemsCheckbox" onchange="calculateTotal()"> Need Poojari to bring items (₹500 extra)
+  </label>
+
+  <div class="amount-box">
+    <p>Extra Amount: ₹<span id="extraAmount">0</span></p>
+    <p>GST (18%): ₹<span id="gstAmount">0</span></p>
+    <p><strong>Total Payable:</strong> ₹<span id="totalAmount"></span></p>
+  </div>
+
+  <button onclick="placeOrder()">Place Order</button>
+</div>
+
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</body>
+</html>

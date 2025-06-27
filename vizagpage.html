@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services - Surya Traditional</title>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/vizagpage.css">
+<script src="js/vizagpage.js"></script>
+</head>
+<body>
+
+<nav>
+  <h2 class="logo">Surya Traditional</h2>
+  <ul>
+    <li><a href="location.html">Home</a></li>
+    <li><a href="about2.html">About</a></li>
+    <li><a href="services2.html">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <span id="welcome-msg"></span>
+  <button onclick="logout()" style="margin-left: 15px; background-color: darkorange; color: white; padding: 8px 15px; border-radius: 20px; border: none; cursor: pointer;">Logout</button>
+</nav>
+
+<div class="container">
+  <h2>Select a Service</h2>
+  <button class="service-btn" onclick="showPeople('homam')">Homam</button>
+  <button class="service-btn" onclick="showPeople('marriage')">Marriage</button>
+  <button class="service-btn" onclick="showPeople('gruha')">Gruha Pravesh</button>
+  <button class="service-btn" onclick="showPeople('kasi')">Kasi Puja</button>
+  <button class="service-btn" onclick="showPeople('satyanarayan-pooja')">Satyanarayan Pooja</button>
+  <button class="service-btn" onclick="showPeople('extras')">Extra Services</button>
+</div>
+
+<!-- Example People for Each Service -->
+<div id="homam" class="people-container">
+  <div class="person-card" onclick="showDetails('Ramesh', 'Telugu, Hindi', 'MA Sanskrit', 40, '10 years', 2000)"><img src="css/images/person1.jpeg"><h4>Ramesh</h4></div>
+  <div class="person-card" onclick="showDetails('Suresh', 'Telugu, English', 'BA Philosophy', 35, '8 years', 1800)"><img src="css/images/person2.jpeg"><h4>Suresh</h4></div>
+  <div class="person-card" onclick="showDetails('Anil', 'Hindi, Sanskrit', 'BA Vedic Studies', 50, '12 years', 2200)"><img src="css/images/person3.jpeg"><h4>Anil</h4></div>
+  <div class="person-card" onclick="showDetails('Ravi', 'Telugu', 'MA Astrology', 42, '15 years', 2500)"><img src="css/images/person4.jpeg"><h4>Ravi</h4></div>
+  <div class="person-card" onclick="showDetails('Shankar', 'Telugu, Hindi', 'MA Sanskrit', 38, '9 years', 2100)"><img src="css/images/person5.jpeg"><h4>Shankar</h4></div>
+</div>
+
+<div id="marriage" class="people-container">
+  <div class="person-card" onclick="showDetails('Mahesh', 'Telugu, Tamil', 'MA Vedic Studies', 45, '15 years', 5000)"><img src="css/images/person3.jpeg"><h4>Mahesh</h4></div>
+  <div class="person-card" onclick="showDetails('Prakash', 'Telugu, English', 'BA Sanskrit', 38, '12 years', 4500)"><img src="css/images/person4.jpeg"><h4>Prakash</h4></div>
+  <div class="person-card" onclick="showDetails('Vinay', 'Hindi, Telugu', 'MA Sanskrit', 50, '20 years', 5500)"><img src="css/images/person5.jpeg"><h4>Vinay</h4></div>
+  <div class="person-card" onclick="showDetails('Siddharth', 'Telugu', 'BA Philosophy', 40, '10 years', 4800)"><img src="css/images/person2.jpeg"><h4>Siddharth</h4></div>
+  <div class="person-card" onclick="showDetails('Lokesh', 'Hindi, Tamil', 'BA Sanskrit', 37, '9 years', 4300)"><img src="css/images/person1.jpeg"><h4>Lokesh</h4></div>
+</div>
+
+<div id="gruha" class="people-container">
+  <div class="person-card" onclick="showDetails('Ramesh', 'Telugu, Hindi', 'MA Sanskrit', 40, '10 years', 2000)"><img src="css/images/person1.jpeg"><h4>Ramesh</h4></div>
+  <div class="person-card" onclick="showDetails('Suresh', 'Telugu, English', 'BA Philosophy', 35, '8 years', 1800)"><img src="css/images/person2.jpeg"><h4>Suresh</h4></div>
+  <div class="person-card" onclick="showDetails('Anil', 'Hindi, Sanskrit', 'BA Vedic Studies', 50, '12 years', 2200)"><img src="css/images/person3.jpeg"><h4>Anil</h4></div>
+  <div class="person-card" onclick="showDetails('Ravi', 'Telugu', 'MA Astrology', 42, '15 years', 2500)"><img src="css/images/person4.jpeg"><h4>Ravi</h4></div>
+  <div class="person-card" onclick="showDetails('Shankar', 'Telugu, Hindi', 'MA Sanskrit', 38, '9 years', 2100)"><img src="css/images/person5.jpeg"><h4>Shankar</h4></div>
+</div>
+
+<div id="kasi" class="people-container">
+  <div class="person-card" onclick="showDetails('Mahesh', 'Telugu, Tamil', 'MA Vedic Studies', 45, '15 years', 5000)"><img src="css/images/person3.jpeg"><h4>Mahesh</h4></div>
+  <div class="person-card" onclick="showDetails('Prakash', 'Telugu, English', 'BA Sanskrit', 38, '12 years', 4500)"><img src="css/images/person4.jpeg"><h4>Prakash</h4></div>
+  <div class="person-card" onclick="showDetails('Vinay', 'Hindi, Telugu', 'MA Sanskrit', 50, '20 years', 5500)"><img src="css/images/person5.jpeg"><h4>Vinay</h4></div>
+  <div class="person-card" onclick="showDetails('Siddharth', 'Telugu', 'BA Philosophy', 40, '10 years', 4800)"><img src="css/images/person2.jpeg"><h4>Siddharth</h4></div>
+  <div class="person-card" onclick="showDetails('Lokesh', 'Hindi, Tamil', 'BA Sanskrit', 37, '9 years', 4300)"><img src="css/images/person1.jpeg"><h4>Lokesh</h4></div>
+</div>
+
+<div id="satyanarayan-pooja" class="people-container">
+  <div class="person-card" onclick="showDetails('Ramesh', 'Telugu, Hindi', 'MA Sanskrit', 40, '10 years', 2000)"><img src="css/images/person1.jpeg"><h4>Ramesh</h4></div>
+  <div class="person-card" onclick="showDetails('Suresh', 'Telugu, English', 'BA Philosophy', 35, '8 years', 1800)"><img src="css/images/person2.jpeg"><h4>Suresh</h4></div>
+  <div class="person-card" onclick="showDetails('Anil', 'Hindi, Sanskrit', 'BA Vedic Studies', 50, '12 years', 2200)"><img src="css/images/person3.jpeg"><h4>Anil</h4></div>
+  <div class="person-card" onclick="showDetails('Ravi', 'Telugu', 'MA Astrology', 42, '15 years', 2500)"><img src="css/images/person4.jpeg"><h4>Ravi</h4></div>
+  <div class="person-card" onclick="showDetails('Shankar', 'Telugu, Hindi', 'MA Sanskrit', 38, '9 years', 2100)"><img src="css/images/person5.jpeg"><h4>Shankar</h4></div>
+</div>
+
+<div id="extras" class="people-container">
+  <div class="person-card" onclick="showDetails('Mahesh', 'Telugu, Tamil', 'MA Vedic Studies', 45, '15 years', 5000)"><img src="css/images/person3.jpeg"><h4>Mahesh</h4></div>
+  <div class="person-card" onclick="showDetails('Prakash', 'Telugu, English', 'BA Sanskrit', 38, '12 years', 4500)"><img src="css/images/person4.jpeg"><h4>Prakash</h4></div>
+  <div class="person-card" onclick="showDetails('Vinay', 'Hindi, Telugu', 'MA Sanskrit', 50, '20 years', 5500)"><img src="css/images/person5.jpeg"><h4>Vinay</h4></div>
+  <div class="person-card" onclick="showDetails('Siddharth', 'Telugu', 'BA Philosophy', 40, '10 years', 4800)"><img src="css/images/person2.jpeg"><h4>Siddharth</h4></div>
+  <div class="person-card" onclick="showDetails('Lokesh', 'Hindi, Tamil', 'BA Sanskrit', 37, '9 years', 4300)"><img src="css/images/person1.jpeg"><h4>Lokesh</h4></div>
+</div>
+
+<div class="overlay" id="overlay" onclick="closePopup()"></div>
+<div class="popup" id="popup">
+  <h3 id="personName"></h3>
+  <p><strong>Languages:</strong> <span id="languages"></span></p>
+  <p><strong>Qualification:</strong> <span id="qualification"></span></p>
+  <p><strong>Age:</strong> <span id="age"></span></p>
+  <p><strong>Experience:</strong> <span id="experience"></span></p>
+  <p><strong>Price:</strong> ₹<span id="price"></span></p>
+  <button onclick="selectPerson()">Select</button>
+</div>
+
+<div id="terms">
+  <div class="Contact">
+    <br><br><br><br>
+    <span id="contact">Contact Us</span><br><br>
+    <span id="num">+91 7337407456</span><br><br>
+    <span id="email">suryatraditional@gmail.com</span>
+  </div>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <div class="social-icons">
+    <a href="#"><i class="fa fa-facebook-square"></i></a>
+    <a href="#"><i class="fa fa-twitter-square"></i></a>
+    <a href="#"><i class="fa fa-instagram"></i></a>
+    <a href="#"><i class="fa fa-youtube-square"></i></a>
+    <a href="#"><i class="fa fa-linkedin-square"></i></a>
+  </div>
+  <p id="term">Copyright ©2023 All rights reserved | Made by Gudivada Surya Dhanush</p>
+</div>
+
+<a href="#" class="to-top" id="toTop">&#8593;</a>
+
+</body>
+</html>

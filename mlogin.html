@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Member Login - Surya Traditional</title>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/mlogin.css">
+</head>
+<body>
+
+  <nav>
+    <h2 class="logo">Surya Traditional</h2>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="login-container">
+    <h2>Member Login</h2>
+    <div class="toggle-buttons">
+      <button id="emailBtn" class="active">Email</button>
+      <button id="mobileBtn">Mobile</button>      
+    </div>
+
+    <div id="emailForm" class="form-content active">
+      <input type="email" id="emailInput" placeholder="Enter Email" required><br>
+      <input type="password" id="emailPassword" placeholder="Enter Password" required><br>
+      <button class="submit-btn" id="emailLoginBtn">Login</button>
+    </div>
+
+    <div id="mobileForm" class="form-content">
+      <input type="text" id="mobileInput" placeholder="Enter Mobile Number" maxlength="10" required><br>
+      <input type="password" id="mobilePassword" placeholder="Enter Password" required><br>
+      <button class="submit-btn" id="mobileLoginBtn">Login</button>
+    </div>
+
+    <p style="margin-top: 15px; color: white;">
+      Not registered? <a href="register.html" style="color: darkorange; text-decoration: underline;">Click here</a>
+    </p>
+  </div>
+
+  <footer>
+    Copyright ©2024 All rights reserved | Made by Gudivada Surya Dhanush
+  </footer>
+
+<script type="module">
+import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+
+const supabaseUrl = 'https://ajrvjnrrfecjhdclhkcx.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFqcnZqbnJyZmVjamhkY2xoa2N4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTA5NjE4MDYsImV4cCI6MjA2NjUzNzgwNn0.lMxG0-ely6IzaDNBF4uCiuviJ81KzdG092wJuHdaRg4';
+const supabase = createClient(supabaseUrl, supabaseKey);
+
+// Toggle Buttons
+const emailBtn = document.getElementById('emailBtn');
+const mobileBtn = document.getElementById('mobileBtn');
+const emailForm = document.getElementById('emailForm');
+const mobileForm = document.getElementById('mobileForm');
+
+emailBtn.addEventListener('click', () => {
+  emailBtn.classList.add('active');
+  mobileBtn.classList.remove('active');
+  emailForm.classList.add('active');
+  mobileForm.classList.remove('active');
+});
+
+mobileBtn.addEventListener('click', () => {
+  mobileBtn.classList.add('active');
+  emailBtn.classList.remove('active');
+  mobileForm.classList.add('active');
+  emailForm.classList.remove('active');
+});
+
+// Attach Login Button Listeners
+document.getElementById('emailLoginBtn').addEventListener('click', loginWithEmail);
+document.getElementById('mobileLoginBtn').addEventListener('click', loginWithMobile);
+
+// Email Login Function
+async function loginWithEmail() {
+  const email = document.getElementById('emailInput').value.trim();
+  const password = document.getElementById('emailPassword').value.trim();
+
+  if (!email || !password) {
+    alert('Please enter both Email and Password');
+    return;
+  }
+
+  const { data } = await supabase.from('newtable')
+    .select('*')
+    .eq('email', email)
+    .eq('password', password)
+    .single();
+
+  if (data) {
+    localStorage.setItem('firstname', data.firstname);
+    alert('Login Successful');
+    window.location.href = 'location.html';
+  } else {
+    alert('Invalid Email or Password');
+  }
+}
+
+// Mobile Login Function
+async function loginWithMobile() {
+  const mobile = document.getElementById('mobileInput').value.trim();
+  const password = document.getElementById('mobilePassword').value.trim();
+
+  if (!mobile || !password) {
+    alert('Please enter both Mobile Number and Password');
+    return;
+  }
+  if (mobile.length !== 10 || isNaN(mobile)) {
+    alert('Mobile number must be exactly 10 digits');
+    return;
+  }
+
+  const { data } = await supabase.from('newtable')
+    .select('*')
+    .eq('mobilenumber', mobile)
+    .eq('password', password)
+    .single();
+
+  if (data) {
+    localStorage.setItem('firstname', data.firstname);
+    alert('Login Successful');
+    window.location.href = 'location.html';
+  } else {
+    alert('Invalid Mobile Number or Password');
+  }
+}
+
+</script>
+
+</body>
+</html>
