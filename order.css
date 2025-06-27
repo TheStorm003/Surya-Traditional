@@ -1,6 +1,6 @@
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Josefin Sans', sans-serif; }
 body {
-  background-image: linear-gradient(rgba(255,136,0,0.6), rgba(255,136,0,0.6)), url(images/lord-ram.jpg);
+  background-image: linear-gradient(rgba(255,136,0,0.6), rgba(255,136,0,0.6)), url(lord-ram.jpg);
   background-size: cover;
   background-position: center;
   min-height: 100vh;
