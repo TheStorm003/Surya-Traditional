@@ -117,13 +117,13 @@ async function loginWithMobile() {
     return;
   }
 
-  const { data } = await supabase.from('newtable')
-    .select('*')
-    .eq('mobilenumber', mobile)
-    .eq('password', password)
-    .single();
-  console.log('Supabase data:', data);
-  console.log('Supabase error:', error);
+  const { data, error } = await supabase
+  .from('newtable')
+  .select('*')
+  .filter('mobilenumber', 'eq', mobile) // text-safe filter
+  .filter('password', 'eq', password)
+  .maybeSingle();
+  
   if (data) {
     localStorage.setItem('firstname', data.firstname);
     alert('Login Successful');
@@ -137,5 +137,6 @@ async function loginWithMobile() {
 
 </body>
 </html>
+
 
 
