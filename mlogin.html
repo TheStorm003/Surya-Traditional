@@ -122,7 +122,9 @@ async function loginWithMobile() {
   .select('*', { head: false })  // avoid 406 issues
   .eq('mobilenumber', mobile)
   .eq('password', password)
-  .maybeSingle();           
+  .maybeSingle();
+  console.log('Supabase data:', data);
+console.log('Supabase error:', error);
   
   if (data) {
     localStorage.setItem('firstname', data.firstname);
@@ -137,6 +139,7 @@ async function loginWithMobile() {
 
 </body>
 </html>
+
 
 
 
