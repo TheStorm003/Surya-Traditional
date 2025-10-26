@@ -123,10 +123,9 @@ async function loginWithMobile() {
   .eq('mobilenumber', mobile)
   .eq('password', password)
   .maybeSingle();
-  console.log('Supabase data:', data);
-  console.log('Supabase error:', error);
-  console.log("Type of mobile:", typeof mobile);
-  console.log("Type of column in Supabase:", "check in table editor");
+  console.log("Mobile sent:", `"${mobile}"`);
+  console.log("Password sent:", `"${password}"`);
+
 
   
   if (data) {
@@ -142,6 +141,7 @@ async function loginWithMobile() {
 
 </body>
 </html>
+
 
 
 
