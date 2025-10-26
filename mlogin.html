@@ -124,7 +124,10 @@ async function loginWithMobile() {
   .eq('password', password)
   .maybeSingle();
   console.log('Supabase data:', data);
-console.log('Supabase error:', error);
+  console.log('Supabase error:', error);
+  console.log("Type of mobile:", typeof mobile);
+  console.log("Type of column in Supabase:", "check in table editor");
+
   
   if (data) {
     localStorage.setItem('firstname', data.firstname);
@@ -139,6 +142,7 @@ console.log('Supabase error:', error);
 
 </body>
 </html>
+
 
 
 
