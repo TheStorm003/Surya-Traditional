@@ -122,7 +122,8 @@ async function loginWithMobile() {
     .eq('mobilenumber', mobile)
     .eq('password', password)
     .single();
-
+  console.log('Supabase data:', data);
+  console.log('Supabase error:', error);
   if (data) {
     localStorage.setItem('firstname', data.firstname);
     alert('Login Successful');
@@ -136,4 +137,5 @@ async function loginWithMobile() {
 
 </body>
 </html>
+
 
